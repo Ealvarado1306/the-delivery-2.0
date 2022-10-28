@@ -3,9 +3,8 @@ using System.Collections;
 
 public class IsometricCharacterController : MonoBehaviour {
 
-    public float walkSpeed = 4f;
     Vector3 forward, right;
-    private float moveSpeed;
+    public float moveSpeed;
     Animator anim;
 
 	// Use this for initialization
@@ -18,9 +17,6 @@ public class IsometricCharacterController : MonoBehaviour {
         // -45 degrees from the world x axis
         right = Quaternion.Euler(new Vector3(0,90,0)) * forward;
 
-        // Initial speed
-        moveSpeed = walkSpeed;
-	    
 	}
 	
 	// Update is called once per frame

@@ -4,28 +4,36 @@ using UnityEngine;
 
 public class Jumping : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float buttonTime = 0.3f;
-    public float jumpAmount = 20;
-    float jumpTime;
-    bool jumping;
+    public float jumpHeight;
+    public bool isGrounded; //Can't figure out how to make this work 
     Animator anim;
-
-    private void Update()
+    public Rigidbody rb;
+    // Start is called before the first frame update
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            jumping = true;
-            jumpTime = 0;
+        anim = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    { 
+        if (Input.GetKeyDown(KeyCode.Space)){
+            rb.AddForce(Vector3.up * jumpHeight);
+            anim.SetTrigger("Jump");
         }
-        if(jumping)
-        {
-            rb.velocity = new Vector2(rb.velocity.y, jumpAmount);
-            jumpTime += Time.deltaTime;
+
+    }
+
+    // None of this works
+    void OnCollisionEnter(Collision other){
+        if (other.gameObject.tag == "Ground"){
+            isGrounded = true;
         }
-        if(Input.GetKeyUp(KeyCode.Space) | jumpTime > buttonTime)
-        {
-            jumping = false;
+    }
+
+    void OnCollisionExit(Collision other){
+        if (other.gameObject.tag == "Ground"){
+            isGrounded = false;
         }
     }
 }
