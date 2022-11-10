@@ -388,7 +388,6 @@ GameObject:
   m_Component:
   - component: {fileID: 530532315718688217}
   - component: {fileID: 7658508340199846695}
-  - component: {fileID: 2071985180427260077}
   m_Layer: 0
   m_Name: Rig
   m_TagString: Untagged
@@ -428,21 +427,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2071985180427260077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530532315718255097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25eda88d95c981043b6827793f8fc815, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 7658508340199846695}
-  buttonTime: 0.3
-  jumpAmount: 15
 --- !u!1 &530532315718255099
 GameObject:
   m_ObjectHideFlags: 0
