@@ -6,6 +6,7 @@ public class IsometricCharacterController : MonoBehaviour {
     Vector3 forward, right;
     public float moveSpeed;
     Animator anim;
+    AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,7 @@ public class IsometricCharacterController : MonoBehaviour {
         // -45 degrees from the world x axis
         right = Quaternion.Euler(new Vector3(0,90,0)) * forward;
 
+        audioSource = gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -24,12 +26,16 @@ public class IsometricCharacterController : MonoBehaviour {
 
         // Movement
         if (Input.anyKey) {
+            if(!audioSource.isPlaying){
+                audioSource.Play();
+            }
             Move();
         }
 
         // No Movement
         else{
             anim.SetFloat("Speed", 0);
+            audioSource.Stop();
         }
 
 	}

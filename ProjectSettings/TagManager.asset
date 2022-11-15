@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Deathbox
+  - Note
   layers:
   - Default
   - TransparentFX
