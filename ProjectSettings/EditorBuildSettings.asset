@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Backyard.unity
     guid: dc27f8f142ee4bb12be3e3ad09e6fcc6
+  - enabled: 1
+    path: Assets/Scenes/haalLevel.unity
+    guid: d3334781c8580a845b3b08560fca4268
   m_configObjects: {}
